@@ -18,6 +18,7 @@ public class Refund {
     private String status;
     @Lob
     private String reason;
+    @Column(columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime regdate;
     @OneToOne
     @JoinColumn(name="purchase_product_id")

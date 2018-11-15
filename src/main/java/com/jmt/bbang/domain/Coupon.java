@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Set;
 
@@ -18,12 +19,18 @@ public class Coupon {
     private Long id;
     @Column(length = 20, nullable = false)
     private String name;
+    @Column(nullable = false)
     private int discountRate;
-    private Date expirationDate;
+    @Column(nullable = false)
+    private int quantity;
+    @Column(nullable = false)
+    private LocalDateTime expirationDate;
 
-    @ManyToMany // 구매 개수 추가
+
+    @ManyToMany
     @JoinTable(name = "coupon_product",
             joinColumns = @JoinColumn(name = "coupon_id", referencedColumnName = "id") ,
             inverseJoinColumns = @JoinColumn(name = "product_id", referencedColumnName = "id") )
     private Set<Product> couponProducts;
+
 }

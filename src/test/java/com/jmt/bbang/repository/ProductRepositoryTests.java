@@ -17,14 +17,14 @@ public class ProductRepositoryTests {
     @Autowired
     ProductRepository productRepository;
 
-    @Test
-    public void 회원번호로검색(){
-        Product product = productRepository.findBytId(1L);
-
-
-
-            System.out.println(product.getProductName());
-            System.out.println(product.getId());
-
-    }
+//    @Test
+//    public void 회원번호로검색(){
+//        Product product = productRepository.findBytId(1L);
+//
+//
+//
+//            System.out.println(product.getProductName());
+//            System.out.println(product.getId());
+//
+//    }
 }

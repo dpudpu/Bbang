@@ -15,7 +15,9 @@ public class ProductOption {
     private Long id;
     @Column(length = 255, nullable = false)
     private String name;
-    private int extraPrice;
+    private int price;
+    private int quantity;
+    private int discount;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="product_id")
     private Product product;

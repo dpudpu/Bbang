@@ -20,7 +20,7 @@ public class ProductOptionRepositoryTests {
 
     @Test
     public void 일단그냥테스트(){
-        Pageable pageable = PageRequest.of(0, 10);
+        Pageable pageable = PageRequest.of(0, 5);
         Page<ProductOption> productOptions = productOptionRepository.findByProductId(1L, pageable);
 
         System.out.println(productOptions.getTotalElements());
@@ -32,6 +32,7 @@ public class ProductOptionRepositoryTests {
             System.out.println(articleGroup.getName());
         }
     }
+
     @Test
     public void 이름으로검색LIKE사용(){
         Pageable pageable = PageRequest.of(0, 3);

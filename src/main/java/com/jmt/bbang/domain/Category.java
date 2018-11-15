@@ -15,10 +15,10 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(length = 100, nullable = false)
-    private String first;
-    @Column(length = 100, nullable = false)
-    private String second;
-    @OneToMany(mappedBy = "category")
-    private Set<Product> products;
-
+    private String name;
+    @Column(columnDefinition = "integer default 0")
+    private Long parent_id;
+    // 인기순서로 보여지게 컬럼
+    @Column(nullable = false)
+    private int ordering;
 }

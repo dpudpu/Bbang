@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
@@ -24,8 +25,8 @@ public class Member {
     private String password;
     @Column(length = 255, nullable = false)
     private String email;
-    @Column(length = 20, nullable = false)
-    private String gender;
+    // 1-여자, 2-남자, 3-그외 enum써보 @Enumerated
+    private int gender;
     @Column(length = 100, nullable = false)
     private String phoneNum;
     @Column(length = 255, nullable = false)
@@ -34,14 +35,15 @@ public class Member {
     private String addrDetails;
     @Column(length = 255, nullable = false)
     private String zipCode;
+    @Column(columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    private LocalDateTime regdate;
+    @Column(columnDefinition = "integer default 0")
+    private int point;
     private boolean recievingMail;
     private boolean recievingSms;
-    private Date regdate;
-    @Column(name = "point")
-    private int point=0;
 
     @OneToMany(mappedBy = "member")
-    private Set<Cart> cart;
+    private Set<CartProduct> cartProduct;
 
     @ManyToMany
     @JoinTable(name = "member_coupon",

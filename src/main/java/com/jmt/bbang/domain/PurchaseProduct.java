@@ -19,7 +19,6 @@ public class PurchaseProduct {
     @Column(name = "refunded")
     private boolean refunded = false;
 
-    // 1 --- 0..1 은 어떻게?
     @OneToOne(mappedBy = "purchaseProduct")
     private Refund refund;
 
