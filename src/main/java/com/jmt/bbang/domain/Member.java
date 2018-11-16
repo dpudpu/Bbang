@@ -19,11 +19,9 @@ public class Member {
     private Long id;
     @Column(length = 20, nullable = false)
     private String name;
-    @Column(length = 40, nullable = false)
-    private String loginId;
     @Column(length = 255, nullable = false)
     private String password;
-    @Column(length = 255, nullable = false)
+    @Column(length = 255, nullable = false, unique = true)
     private String email;
     // 1-여자, 2-남자, 3-그외 enum써보 @Enumerated
     private int gender;
