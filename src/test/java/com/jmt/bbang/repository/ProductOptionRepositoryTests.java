@@ -36,7 +36,7 @@ public class ProductOptionRepositoryTests {
     @Test
     public void 이름으로검색LIKE사용(){
         Pageable pageable = PageRequest.of(0, 3);
-        Page<ProductOption> productOptions = productOptionRepository.findByNameContaining2("레드", pageable);
+        Page<ProductOption> productOptions = productOptionRepository.findByNameContaining2("우유", pageable);
 
         System.out.println(productOptions.getTotalElements());
         System.out.println(productOptions.getTotalPages());

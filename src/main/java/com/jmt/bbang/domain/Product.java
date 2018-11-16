@@ -28,7 +28,7 @@ public class Product {
     private int quantity;
     @Column(columnDefinition = "integer default 0")
     private int totalSales;
-    @Column(nullable = true)
+    @Column(columnDefinition = "integer default 0")
     private int discount;
 
     @Column(length = 255, nullable = false)
@@ -40,8 +40,6 @@ public class Product {
     @Column(columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime updateDate;
 
-    @OneToMany(mappedBy = "product")
-    private Set<ProductOption> productOptions;
 
     @ManyToOne
     @JoinColumn(name = "category_id", nullable = false)
@@ -50,14 +48,12 @@ public class Product {
     @OneToOne(mappedBy = "product")
     private PurchaseProduct purchaseProducts;
 
-    @OneToMany(mappedBy = "product")
+    @OneToMany
+    @JoinColumn(name = "product_id")
     private Set<ProductFile> productFiles;
 
-
-    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "couponProducts")
-    private Set<Coupon> Coupons;
-//
-//    @OneToMany(mappedBy="product")
-//    private Set<CartProduct> cartProducts;
+    @OneToMany
+    @JoinColumn(name = "product_id")
+    private Set<ProductOption> productOptions;
 
 }

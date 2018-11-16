@@ -39,11 +39,11 @@ public class Member {
     private LocalDateTime regdate;
     @Column(columnDefinition = "integer default 0")
     private int point;
-    private boolean recievingMail;
-    private boolean recievingSms;
+    @Column(nullable = false)
+    private boolean recieveMail;
+    @Column(nullable = false)
+    private boolean recieveSms;
 
-    @OneToMany(mappedBy = "member")
-    private Set<CartProduct> cartProduct;
 
     @ManyToMany
     @JoinTable(name = "member_coupon",

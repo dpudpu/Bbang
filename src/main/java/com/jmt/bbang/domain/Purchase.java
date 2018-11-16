@@ -20,8 +20,8 @@ public class Purchase {
     @OneToOne(mappedBy = "purchase")
     private Delivery delivery;
 
-    // Many인데 Collection을 사용하지 않아서 에러가 났었다.
-    @OneToMany(mappedBy = "purchase")
+    @OneToMany
+    @JoinColumn(name = "purchase_id")
     private Set<PurchaseProduct> purchaseProduct;
 
     @OneToOne(mappedBy = "purchase")

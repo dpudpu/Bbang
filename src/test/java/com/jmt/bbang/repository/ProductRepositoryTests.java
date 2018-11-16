@@ -17,14 +17,27 @@ public class ProductRepositoryTests {
     @Autowired
     ProductRepository productRepository;
 
-//    @Test
-//    public void 회원번호로검색(){
-//        Product product = productRepository.findBytId(1L);
-//
-//
-//
-//            System.out.println(product.getProductName());
-//            System.out.println(product.getId());
-//
-//    }
+    @Test
+    public void 모두검색(){
+        List<Product> products = productRepository.findAll();
+
+        System.out.println("==================");
+        for(Product p : products){
+            System.out.println(p.getId()+", "+p.getProductName()+", "
+                    +p.getPrice()+", "+p.getCategory().getName()+", "+p.getCategory().getParent_id());
+        }
+        System.out.println("==================");
+    }
+
+    @Test
+    public void categoryId로검색(){
+        List<Product> products = productRepository.findByCategoryId(4L);
+        System.out.println("==================");
+        for(Product p : products){
+            System.out.println(p.getId()+", "+p.getProductName()+", "
+                    +p.getPrice()+", "+p.getCategory().getName()+", "+p.getCategory().getParent_id());
+        }
+        System.out.println("==================");
+
+    }
 }

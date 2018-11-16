@@ -15,11 +15,12 @@ public class ProductOption {
     private Long id;
     @Column(length = 255, nullable = false)
     private String name;
+    @Column(nullable = false)
     private int price;
+    @Column(nullable = false)
     private int quantity;
+    @Column(columnDefinition = "integer default 0")
     private int discount;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="product_id")
-    private Product product;
+
 
 }
