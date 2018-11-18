@@ -1,4 +1,4 @@
-# Bbang
+# Bbang (빵 쇼팡몰)
 Spring boot Project
 
 - IDE : IntelliJ IDEA Ultimate
@@ -8,10 +8,3 @@ Spring boot Project
 - Java8
 - Gradle
 
-
-
-
-
-SELECT * FROM product WHERE category_id = 4;
-
-SELECT * FROM product WHERE category_id 
