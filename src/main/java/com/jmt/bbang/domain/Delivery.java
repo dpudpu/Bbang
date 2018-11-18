@@ -28,8 +28,7 @@ public class Delivery {
     private String status;
     private Date arrivalDate;
 
-    @OneToOne(cascade = CascadeType.REMOVE)
-    @JoinColumn(name="purchase_id")
+    @OneToOne(mappedBy = "delivery")
     private Purchase purchase;
 
 }
