@@ -17,7 +17,8 @@ public class Purchase {
     @JoinColumn(name = "member_id")
     private Member member;
 
-    @OneToOne(mappedBy = "purchase")
+    @OneToOne
+    @JoinColumn(name = "delivery_id", unique = true)
     private Delivery delivery;
 
     @OneToMany

@@ -23,7 +23,7 @@ public class Member {
     private String password;
     @Column(length = 255, nullable = false, unique = true)
     private String email;
-    // 1-여자, 2-남자, 3-그외 enum써보 @Enumerated
+    // 1-여자, 2-남자, 3-그외 enum 사용? @Enumerated
     private int gender;
     @Column(length = 100, nullable = false)
     private String phoneNum;

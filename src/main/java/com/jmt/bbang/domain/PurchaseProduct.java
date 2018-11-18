@@ -18,10 +18,9 @@ public class PurchaseProduct {
     @Column(columnDefinition = "integer default 1")
     private int quantity;
     // 환불을 신청하면 true로 변환해주고 Refund 테이블에 추가해준다.
-    @Column(columnDefinition="bit default 0")
-    private boolean refunded;
 
-    @OneToOne(mappedBy = "purchaseProduct")
+    @OneToOne
+    @JoinColumn(name = "refund_id", unique = true)
     private Refund refund;
 
     @OneToOne
