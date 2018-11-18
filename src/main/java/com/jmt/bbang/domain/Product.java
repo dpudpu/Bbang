@@ -45,8 +45,6 @@ public class Product {
     @JoinColumn(name = "category_id", nullable = false)
     private Category category;
 
-    @OneToOne(mappedBy = "product")
-    private PurchaseProduct purchaseProducts;
 
     @OneToMany
     @JoinColumn(name = "product_id")

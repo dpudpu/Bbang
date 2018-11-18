@@ -18,8 +18,14 @@ public class Delivery {
     private String receiver;
     @Column(length = 100, nullable = false)
     private String phoneNum;
+
     @Column(length = 255, nullable = false)
     private String addr;
+    @Column(length = 255, nullable = false)
+    private String addrDetails;
+    @Column(length = 255, nullable = false)
+    private String zipCode;
+
     @Column(length = 255, nullable = false)
     private String deliveryCompany;
     @Column(length = 255, nullable = false)

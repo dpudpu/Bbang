@@ -23,7 +23,7 @@ public class PurchaseProduct {
     @JoinColumn(name = "refund_id", unique = true)
     private Refund refund;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "product_id")
     private Product product;
 
