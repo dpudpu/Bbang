@@ -25,6 +25,7 @@ public class Purchase {
     @JoinColumn(name = "purchase_id")
     private Set<PurchaseProduct> purchaseProduct;
 
-    @OneToOne(mappedBy = "purchase")
+    @OneToOne
+    @JoinColumn(name = "payment_id")
     private Payment payment;
 }
