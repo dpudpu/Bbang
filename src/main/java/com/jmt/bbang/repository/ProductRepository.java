@@ -12,9 +12,12 @@ import java.util.List;
 import java.util.Set;
 
 public interface ProductRepository extends JpaRepository<Product, Long> {
+    //다대일, 일대일 에서는 페치조인 사용 할 필요가 없다
+    List<Product> findAll();
 
-    public List<Product> findAll();
+//    @Query(value = "select p from product p WHERE p.categoryId=:categoryId")
+    List<Product> findByCategoryId(Long categoryId);
 
-    //    @Query(value = "select po from ProductOption po join fetch po.categoryId where po.categoryId=:categoryId")
-    public List<Product> findByCategoryId(Long categoryId);
+    @Query(value = "SELECT p FROM Product p JOIN FETCH p.category WHERE p.productName LIKE CONCAT('%',:productName,'%')")
+    List<Product> findByProductNameContaining(@Param("productName") String productName);
 }
