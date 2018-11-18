@@ -20,38 +20,12 @@ public abstract class Payment {
     private int amount;
     @Column(columnDefinition="bit default 0")
     private boolean status;
-    @Column(length = 100, nullable = false)
-    private String type;
 
 
     @Column(columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime regdate;
-    @OneToOne(cascade = CascadeType.REMOVE)
-    @JoinColumn(name="purchase_id")
+    @OneToOne(mappedBy = "payment",cascade = CascadeType.REMOVE)
     private Purchase purchase;
 }
 
-@Entity
-@DiscriminatorValue("C")
-class Card extends Payment{
-    @Column
-    private String cardExpire;
-    @Column(length = 100)
-    private String cardNum;
-    @Column
-    private String cardHolder;
-    @Column
-    private String cardCompany;
-}
 
-
-@Entity
-@DiscriminatorValue("B")
-class Bank extends Payment{
-    @Column(length = 100)
-    private String bankAccount;
-    @Column(length = 100)
-    private String bankName;
-    @Column
-    private String remitter;
-}
