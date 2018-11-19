@@ -41,11 +41,15 @@ public class Product {
     private LocalDateTime updateDate;
 
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id", nullable = false)
     private Category category;
 
+    @OneToMany
+    @JoinColumn(name = "product_id")
+    private Set<ProductThumbnail> producThumbnails;
 
+//    @Basic
     @OneToMany
     @JoinColumn(name = "product_id")
     private Set<ProductFile> productFiles;

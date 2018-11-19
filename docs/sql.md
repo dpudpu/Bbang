@@ -7,12 +7,13 @@ FROM category child INNER JOIN category parent ON parent.id = child.parent_id
 WHERE child.id != 0 ORDER BY child.ordering;
 
 -- 카테고리 대분류만 
-SELECT * FROM category WHERE id = 0 ORDER BY ordering;
+SELECT * FROM category WHERE id = parent_id ORDER BY ordering;
 -- 카테고리 소분류만
-SELECT * FROM category WHERE id != 0 ORDER BY ordering;
+SELECT * FROM category WHERE id != parent_id ORDER BY ordering;
 
 
 -- Product 조회
+SELECT * FROM product p INNER JOIN category c ON p.category_id=c.id WHERE c.parent_id = 1;
 
 
 ```

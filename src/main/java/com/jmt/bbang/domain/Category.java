@@ -17,7 +17,7 @@ public class Category {
     @Column(length = 100, nullable = false)
     private String name;
     @Column(columnDefinition = "integer default 0")
-    private Long parent_id;
+    private Long parentId;
     // 인기순서로 보여지게 컬럼
     @Column(nullable = false)
     private int ordering;
