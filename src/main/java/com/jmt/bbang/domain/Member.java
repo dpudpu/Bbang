@@ -5,7 +5,6 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
@@ -44,6 +43,11 @@ public class Member {
     @Column(nullable = false)
     private boolean recieveSms;
 
+    @ManyToMany
+    @JoinTable(name = "member_role",
+            joinColumns = @JoinColumn(name = "member_id", referencedColumnName = "id") ,
+            inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id") )
+    private Set<Role> roles;
 
     @ManyToMany
     @JoinTable(name = "member_coupon",
