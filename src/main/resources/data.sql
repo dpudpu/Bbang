@@ -85,13 +85,14 @@ INSERT INTO product_option(price, name, product_id, quantity)
 VALUES (2000, '중국산우유', 2,100);
 
 
+
 -- 회원관련 샘플데이터
 INSERT INTO member(email, nickname, name, gender, password, phone_num, recieve_mail, recieve_sms,addr, addr_details, zip_code )
-VALUES ('dpudpu@naver.com','배대준','배대준', 1,'1234','1234',true ,true ,'부천시','도당동','123');
+VALUES ('dpudpu@naver.com','배대준','배대준', 1,'{bcrypt}$2a$10$pUOgo50Tle5zE4pnDfL1KOhHIRgGgi8NG5/RrrLC7JfsENgZ5e52a','1234',true ,true ,'부천시','도당동','123');
 INSERT INTO member(email, nickname, name, gender, password, phone_num, recieve_mail, recieve_sms,addr, addr_details, zip_code )
-VALUES ('hong@naver.com','홍길동','정시윤', 1,'1234','1234',true ,true ,'부천시','도당동','123');
+VALUES ('hong@naver.com','홍길동','홍길동', 1,'{1Qh8WUWIqhsEF1DNR+DLEhyajWYIvpJ2RsEa0FCQSeo=}b67c34a948f453c682fb4c52586ab9d8','1234',true ,true ,'부천시','도당동','123');
 INSERT INTO member(email, name, nickname, gender, password, phone_num, recieve_mail, recieve_sms,addr, addr_details, zip_code )
-VALUES ('yoon@naver.com','정시윤','정시윤', 1,'1234','1234',true ,true ,'부천시','도당동','123');
+VALUES ('yoon@naver.com','정시윤','정시윤', 1,'{bcrypt}$2a$10$W84A53cyqKFTZ4ZzBdwtxeP5gE8YEJ2WIzUXQUFC6GzuTfJVuJVXW','1234',true ,true ,'부천시','도당동','123');
 INSERT INTO member(email, name, nickname, gender, password, phone_num, recieve_mail, recieve_sms,addr, addr_details, zip_code )
 VALUES ('chul@naver.com','신윤철','신윤철', 1,'1234','1234',true ,true ,'부천시','도당동','123');
 INSERT INTO member(email, name, nickname, gender, password, phone_num, recieve_mail, recieve_sms,addr, addr_details, zip_code )
@@ -103,4 +104,13 @@ VALUES ('hyung@naver.com','김준형','김준형', 1,'1234','1234',true ,true ,'
 INSERT INTO member(email, name, nickname, gender, password, phone_num, recieve_mail, recieve_sms,addr, addr_details, zip_code )
 VALUES ('jang@naver.com','장태희','장태희', 1,'1234','1234',true ,true ,'부천시','도당동','123');
 
+
+insert into role (id,  name) values (1, 'USER');
+insert into role (id,  name) values (2, 'ADMIND');
+
+
+insert into member_role(member_id, role_id) values( 1, 1);
+insert into member_role(member_id, role_id) values( 1, 2);
+insert into member_role(member_id, role_id) values( 2, 1);
+insert into member_role(member_id, role_id) values( 3, 1);
 
