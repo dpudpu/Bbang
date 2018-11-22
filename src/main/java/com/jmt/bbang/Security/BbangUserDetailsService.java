@@ -21,14 +21,13 @@ public class BbangUserDetailsService implements UserDetailsService {
     MemberService memberService;
 
 
-    @Override
     @Transactional(readOnly = true)
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         Member member = memberService.getMember(email);
         if(member==null)
             throw new UsernameNotFoundException(email+" is not found");
 
-        Collection<GrantedAuthority> authorityCollection = new ArrayList<>();
+        Collection<GrantedAuthority> authorityCollection = new ArrayList();
 
         for(Role role : member.getRoles())
             authorityCollection.add(new SimpleGrantedAuthority("ROLE_"+role.getName()));
