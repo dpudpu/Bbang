@@ -12,4 +12,5 @@ Spring boot Project
 
 ## ER 다이어그램
 
-![ER다이어그램](./docs/ER diagram.jpg)
+![ER다이어그램](docs/ER diagram.jpg)
+![Alt text](/path/to/img.jpg)
