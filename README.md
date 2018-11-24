@@ -8,3 +8,8 @@ Spring boot Project
 - Java8
 - Gradle
 
+
+
+## ER 다이어그램
+
+![ER다이어그램](./docs/ER diagram.jpg)
