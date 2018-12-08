@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    
+<div class="container">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+        <div class="jumbotron" style="padding-top: 20px;">
+
+            <form method="post" id="signUp" name="signUp"onsubmit="return checkForm()" action="/signUp" >
+                <h3 style="text-align: center;">회원가입 화면</h3>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="아이디" name="userId" maxlength="20">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="비밀번호" name="userPassword" maxlength="20">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="비밀번호확인" name="userPasswordCheck" maxlength="20">
+                    <div id="checkPwd">동일한 암호를 입력하세요.</div>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="이름" name="userName" maxlength="20">
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="이메일" name="userEmail" maxlength="30">
+                </div>
+                <div>
+                    <input type="submit" class="btn btn-primary form-control" value="회원가입">
+                </div>
+                <div>
+                    <input type="reset" class="btn btn-default form-control" value="취소">
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+ <script src="../js/bootstrap.min.js"></script>
+
+</body>
+</html>
